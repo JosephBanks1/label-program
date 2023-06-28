@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Label Program</Label></title>
+    <link href="labels.css" rel="stylesheet" />
+</head>
+
+<body>
+    <form method="post" action=''>
+        <h1 class="main-logo"> <img src="https://www.genovapipe.com/assets/img/geno7.png" width="400px" height="100px"
+                ;>
+        </h1>
+        <form method="post" action="">
+            <fieldset class="input">
+                <label for="order-number">customer order number: <input id="order-number" name="order-number"
+                        type="text" required /></label>
+                <label for="genova-order-number">genova order number: <input id="genova-order-number"
+                        name="genova-order-number" type="text" required /></label>
+                <label for="pkg">PKG:<input id="pkg" name="pkg" type="text" required /></label>
+                <label for="weight">WEIGHT: <input id="weight" name="weight" type="text" required /></label>
+            </fieldset>
+            <fieldset class="input" onkeyup="myFunction()">
+                <label for="pkg-type">PKG TYPE
+                    <select id="pkg-type" name="pkg-type">
+                        <option value="">(select type)</option>
+                        <option value="1">BOX</option>
+                        <option value="2">BUNDLE</option>
+                        <option value="3">CRATE</option>
+                        <option value="4">LIFT</option>
+                        <option value="4">PALLET</option>
+                    </select>
+                </label>
+                <label for="ship-via">SHIP VIA
+                    <select id="ship-via" name="ship-via">
+                        <option value="">(select carrier)</option>
+                        <option value="1">DATS</option>
+                        <option value="2">LTL</option>
+                        <option value="3">FEDEX</option>
+                        <option value="4">GENOVA</option>
+                        <option value="4">UNISHIPPERS</option>
+                        <option value="4">WILL CALL</option>
+                    </select>
+                </label>
+                <label for="plant">PLANT
+                    <select id="plant" name="plant">
+                        <option value="">(select plant)</option>
+                        <option value="1">SP</option>
+                        <option value="2">CT</option>
+                        <option value="3">PF</option>
+                        <option value="4">RN</option>
+                        <option value="4">MI</option>
+                        <option value="4">KY</option>
+                    </select>
+                    <!--delete 'options' and change to this when adding in mysql links: <select name="topic" id="topic">
+                            <option value="" selected="selected">Please select subject first</option>
+                        </select>-->
+                </label>
+                <label for="customer">CUSTOMER
+                    <select id="customer" name="customer">
+                        <option value="">(select customer)</option>
+                        <option value="1">cust 1</option>
+                        <option value="2">cust 2</option>
+                        <option value="3">cust 3</option>
+                        <option value="4">cust 4</option>
+                        <option value="4">cust 5</option>
+                        <option value="4">cust 6</option>
+                    </select>
+                </label>
+                <label for="location">location
+                    <select id="location" name="location">
+                        <option value="">(select location)</option>
+                        <option value="1">location 1</option>
+                        <option value="2">location 2</option>
+                        <option value="3">location 3</option>
+                        <option value="4">location 4</option>
+                        <option value="4">location 5</option>
+                        <option value="4">location 6</option>
+                    </select>
+                </label>
+            </fieldset>
+            <button class="glow-on-hover" type="button" onclick="clearFields()">CLEAR</button>
+            <script type="text/javascript">
+                function clearFields() {
+                    document.getElementById("order-number").value = ""
+                    document.getElementById("genova-order-number").value = ""
+                    document.getElementById("pkg").value = ""
+                    document.getElementById("weight").value = ""
+                    document.getElementById("pkg-type").value = ""
+                    document.getElementById("ship-via").value = ""
+                    document.getElementById("plant").value = ""
+                    document.getElementById("customer").value = ""
+                    document.getElementById("location").value = ""
+                }
+            </script>
+            <button class="glow-on-hover" type="button">PRINT</button>
+            <button class="glow-on-hover" type="button" onclick="menuRedirect()">MENU</button>
+            <script>
+                function menuRedirect() {
+                    document.location.href = "menu.html"
+                }
+            </script>
+            <div class="label">
+                <div class="info-field">
+                    <div class="info-title">ship-to address</div>
+                    <div class="text-box">this is where the address goes</div>
+                </div>
+                <div class="gen-order">
+                    <div class="info-title">genova order #</div>
+                    <div class="text-box">84084 </div>
+                </div>
+                <div class="cust-order">
+                    <div class="info-title">customer order number</div>
+                    <div class="text-box">4654622</div>
+                </div>
+                <div class="label-logo"> <img src="https://www.genovapipe.com/assets/img/geno7.png" width="200px"
+                        height="50px"></div>
+                <div class="pkg-field">
+                    <div class="info-title">packages</div>
+                    <div class="text-box">_ of _</div>
+                </div>
+                <div class="pkg-type">
+                    <div class="info-title2">package</div>
+                    <div class="text-box2">this position is not correct</div>
+                </div>
+                <div class="ship-via">
+                    <div class="info-title2">ship via</div>
+                    <div class="text-box2">carrier input</div>
+                </div>
+                <div class="weight">
+                    <div class="info-title2">weight</div>
+                    <div class="text-box2">weight input</div>
+                </div>
+                <div class="warehouse">
+                    <div class="text-box">5400 Commerce Dr.<br>Paducah, ky 42001</div>
+                </div>
+            </div>
+        </form>
+
+</body>
+
+</html>
