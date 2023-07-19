@@ -4,13 +4,15 @@
     font-weight: bold;
 }
 
+
+
 body {
     width: 100%;
     height: 100%;
     margin: 0;
     background-color: gray;
     color: black;
-    font-family: Tahoma;
+    font-family: Tahoma, Verdana, Geneva, sans-serif; 
     font-size: 20px;
     text-transform: uppercase;
 }
@@ -162,6 +164,7 @@ inline {
     justify-content: center;
     align-items: center;
     background-color: black;
+    fill-opacity: 1;
     color: white;
     font-size: 18px;
 }
@@ -178,26 +181,28 @@ inline {
 }
 
 .text-box {
-    border: 4px solid blue;
+    border: 4px solid rgb(0,0,255);
     height: 100%;
     position: relative;
     vertical-align: middle;
-    font-size: 20;
+    font-size: 25px;
     align-content: center;
+
+    
 }
 
 .text-box2 {
-    border: 4px solid blue;
+    border: 4px solid rgb(0,0,255);
     width: 50%;
     position: relative;
     vertical-align: middle;
-    font-size: 20;
+    font-size: 25px;
     align-content: center;
 
 }
 
 .gen-order {
-    border: 2px solid yellow;
+    border: 2px solid rgb(255,255,0);
     height: 20%;
     width: 250px;
     position: absolute;
@@ -206,17 +211,20 @@ inline {
     margin-top: 5px;
     display: flex;
     flex-direction: column;
+    font-size: 30px;
+
 }
 
 .cust-order {
     border: 2px solid yellow;
-    height: 17%;
+    height: 19%;
     width: 250px;
     position: absolute;
     right: 3%;
     bottom: 2%;
     display: flex;
     flex-direction: column;
+    font-size: 30px;
 }
 
 .pkg-field {
@@ -225,7 +233,7 @@ inline {
     width: 250px;
     position: absolute;
     margin-left: 5%;
-    margin-top: 117px;
+    margin-top: 110px;
     display: flex;
     flex-direction: column;
 }
@@ -236,7 +244,7 @@ inline {
     width: 500px;
     position: absolute;
     margin-left: 5%;
-    margin-top: 230px;
+    margin-top: 210px;
     display: flex;
     flex-direction: row;
 }
@@ -247,7 +255,7 @@ inline {
     width: 500px;
     position: absolute;
     margin-left: 5%;
-    margin-top: 295px;
+    margin-top: 277px;
     display: flex;
     flex-direction: row;
 }
@@ -267,13 +275,13 @@ inline {
     width: 200px;
     height: 50px;
     margin-left: 5%;
-    margin-top: 1%;
+    margin-top: 3%;
     background-color: rgb(54, 104, 219);
 }
 
 .warehouse {
     /* border: 2px solid yellow; */
-    height: 10%;
+    height: 12%;
     width: 300px;
     position: absolute;
     margin-left: 5%;
