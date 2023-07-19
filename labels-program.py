@@ -32,7 +32,7 @@ buttons:clear, print, menu
 label 7
 buttons:clear, print, menu
 label 8 (SHEET 10(LABEL 8))
--9 input fields: 4 inputs (Genova order number, pkg, weight, customer order number) and 5 dependents from data (plant(sp,ct,pf,rn,mi,ml,ky), pkg type, ship via, customer, location( dependent of customer))
+DONE -9 input fields: 4 inputs (Genova order number, pkg, weight, customer order number) and 5 dependents from data (plant(sp,ct,pf,rn,mi,ml,ky), pkg type, ship via, customer, location( dependent of customer))
 # when address is selected populate dependent dropdown list without empty spaces
 # customer list refreshes with a list of unique names only (pulls from data tab, but populates from outside workbooks) when first opened
 # dependent list refreshes from MAL when new name is selected
@@ -44,26 +44,11 @@ buttons:clear, print, menu
 
 """
 #Module 1- button functions
-clean label 1
-clean label 2
-clean label 3
-clean label 4
-clean label 5
-clean label 6
-clean label 7
-clean label 8
-print label 1
-print label 2
-print label 3
-print label 4
-print label 5
-print label 6
-print label 7
-print label 8
+DONE -clear label
+print label 
 
 change image on label 1 based on input file
 refresh image everytime a new item number is loaded
-
 """
 
 
