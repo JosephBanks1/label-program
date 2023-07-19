@@ -4,25 +4,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Label Program</Label></title>
-    <link href="labels.css" rel="stylesheet" />
+    <title>Label 8</Label></title>
+    <link href="label 8.css" rel="stylesheet" />
+    <script type="text/javascript">
+        function clearFields() {
+            document.getElementById("order-number").value = ""
+            document.getElementById("genova-order-number").value = ""
+            document.getElementById("pkg").value = ""
+            document.getElementById("weight").value = ""
+            document.getElementById("pkg-type").value = ""
+            document.getElementById("ship-via").value = ""
+            document.getElementById("plant").value = ""
+            document.getElementById("customer").value = ""
+            document.getElementById("location").value = ""
+        }
+    </script>
+    <script>
+        function menuRedirect() {
+            document.location.href = "menu.html"
+        }
+    </script>
+    <!-- <?php
+
+if$_server["request_method"]=="post" {
+    $connection=mysqli_connect("localhost","enter user name here", "enter password here", "enter database name here");
+    if ($connection) {
+        echo "connection established! <br>";
+    } else {
+        die("Connection failed. Reason: ".
+mysqli_connect_error())
+    }
+}
+?> -->
+
 </head>
 
 <body>
-    <form method="post" action=''>
+    <form method="post" action='' id="dropForm">
         <h1 class="main-logo"> <img src="https://www.genovapipe.com/assets/img/geno7.png" width="400px" height="100px"
                 ;>
         </h1>
         <form method="post" action="">
             <fieldset class="input">
-                <label for="order-number">customer order number: <input id="order-number" name="order-number"
-                        type="text" required /></label>
+                <label for="order-number">customer order number: <input onchange="myFunction()" id="order-number"
+                        name="order-number" type="text" required /></label>
+                <script>
+                    function myFunction() {
+                        var x = document.getElementById("mySelect").value;
+                        document.getElementById("demo").innerHTML = "You selected: " + x;
+                    }
+                </script>
                 <label for="genova-order-number">genova order number: <input id="genova-order-number"
                         name="genova-order-number" type="text" required /></label>
+                <script>
+                    function myFunction() {
+                        var x = document.getElementById("mySelect").value;
+                        document.getElementById("demo").innerHTML = "You selected: " + x;
+                    }
+                </script>
                 <label for="pkg">PKG:<input id="pkg" name="pkg" type="text" required /></label>
                 <label for="weight">WEIGHT: <input id="weight" name="weight" type="text" required /></label>
             </fieldset>
-            <fieldset class="input" onkeyup="myFunction()">
+            <fieldset class="input" onclick="showPkg()">
                 <label for="pkg-type">PKG TYPE
                     <select id="pkg-type" name="pkg-type">
                         <option value="">(select type)</option>
@@ -58,51 +101,15 @@
                             <option value="" selected="selected">Please select subject first</option>
                         </select>-->
                 </label>
-                <label for="customer">CUSTOMER
-                    <select id="customer" name="customer">
-                        <option value="">(select customer)</option>
-                        <option value="1">cust 1</option>
-                        <option value="2">cust 2</option>
-                        <option value="3">cust 3</option>
-                        <option value="4">cust 4</option>
-                        <option value="4">cust 5</option>
-                        <option value="4">cust 6</option>
-                    </select>
+                <label for="customer">CUSTOMER <input id="customer" name="customer" type="text" required />
                 </label>
-                <label for="location">location
-                    <select id="location" name="location">
-                        <option value="">(select location)</option>
-                        <option value="1">location 1</option>
-                        <option value="2">location 2</option>
-                        <option value="3">location 3</option>
-                        <option value="4">location 4</option>
-                        <option value="4">location 5</option>
-                        <option value="4">location 6</option>
-                    </select>
+                <label for="location">location<input id="location" name="location" type="text" required />
                 </label>
             </fieldset>
             <button class="glow-on-hover" type="button" onclick="clearFields()">CLEAR</button>
-            <script type="text/javascript">
-                function clearFields() {
-                    document.getElementById("order-number").value = ""
-                    document.getElementById("genova-order-number").value = ""
-                    document.getElementById("pkg").value = ""
-                    document.getElementById("weight").value = ""
-                    document.getElementById("pkg-type").value = ""
-                    document.getElementById("ship-via").value = ""
-                    document.getElementById("plant").value = ""
-                    document.getElementById("customer").value = ""
-                    document.getElementById("location").value = ""
-                }
-            </script>
-            <button class="glow-on-hover" type="button">PRINT</button>
+            <button class="glow-on-hover" type="button" id="print">PRINT</button>
             <button class="glow-on-hover" type="button" onclick="menuRedirect()">MENU</button>
-            <script>
-                function menuRedirect() {
-                    document.location.href = "menu.html"
-                }
-            </script>
-            <div class="label">
+            <div class="label" id="print">
                 <div class="info-field">
                     <div class="info-title">ship-to address</div>
                     <div class="text-box">this is where the address goes</div>
@@ -121,9 +128,15 @@
                     <div class="info-title">packages</div>
                     <div class="text-box">_ of _</div>
                 </div>
-                <div class="pkg-type">
+                <div class="pkg-type" id="pkg-type">
                     <div class="info-title2">package</div>
-                    <div class="text-box2">this position is not correct</div>
+                    <div class="text-box2"></div>
+                    <script>
+                        function showPkg() {
+                            var x = document.getElementById('pkg-type').selectedIndex;
+
+                        }
+                    </script>
                 </div>
                 <div class="ship-via">
                     <div class="info-title2">ship via</div>
