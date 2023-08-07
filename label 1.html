@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Label 1</title>
+    <link href="label 1.css" rel="stylesheet" />
+
+    <!-- <?php
+        $con = mysqli_connect("insert DB username","insert DB password","insert DB host","insert DB name");
+        $result = mysqli_query($con,"SELECT * FROM <insert DB name for master item list>");
+        $data = $result->fetch_all(MYSQLI_ASSOC);
+    ?> -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/JavaScript">
+        var machine = ['WH','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20',
+        '21','22','23','24','25','26','27','28','29','30','31','32','33','34'];
+        for (i=0; i < 99; i++) {
+            var opt = Math.floor(Math.random() * 99);
+            machine.push(opt);
+        }
+        
+        $(function() {
+            var options = '';
+            for (var i = 0; i < machine.length; i++) {
+                options += '<option value="' + machine[i] + '">' + machine[i] + '</option>';
+            }
+            $('#machine').html(options);
+        });
+        </script>
+
+    <script type="text/javascript">
+        function clearFields() {
+            document.getElementById("order-number").value = "";
+            document.getElementById("machine").value = "";
+            document.getElementById("plant").value = "";
+            document.getElementById("copies").value = "";
+        }
+    </script>
+
+    <script>
+        const printBtn = document.getElementById('printBtn');
+        printBtn.addEventListener('click', function() {
+            print();
+        })
+    </script>
+
+    <script>
+        function menuRedirect() {
+            document.location.href = "menu.html";
+        }
+    </script>
+
+</head>
+
+<style>
+    @media print {
+        body * {
+            visibility:hidden;
+        }
+        .label, .label * {
+            visibility: visible;
+        }
+        .label {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+    }
+</style>
+
+<body>
+    <h1 class="main-logo"> <img src="https://www.genovapipe.com/assets/img/geno7.png" width="400px" height="100px">
+    </h1>
+    <form method="post" action="">
+        <fieldset class="input">
+            <label for="item-number">item number: </label>
+                <input id="order-number" name="order-number" type="text" required />
+            <label for="machine">machine
+                <select id="machine" name="machine">
+                    <option value="">(select type)</option>
+                </select>
+            </label>
+            <label for="plant">PLANT
+                <select id="plant" name="plant">
+                    <option value="">(select plant)</option>
+                    <option value="1">SP</option>
+                    <option value="2">CT</option>
+                    <option value="3">PF</option>
+                    <option value="4">RN</option>
+                    <option value="5">MI</option>
+                    <option value="6">KY</option>
+                </select>
+            </label>
+            <input id="copies" name="copies" type="text" required />
+            <label for="copies">copies: </label>
+            <button class="glow-on-hover" type="submit" onclick="SubmitEvent" id="submitBtn">SUBMIT</button>
+        </fieldset>
+        
+        
+        <button class="glow-on-hover" type="button" onclick="clearFields()">CLEAR</button>
+        <button class="glow-on-hover" type="button" onclick="window.print(printBtn)" id="print">PRINT</button>
+        <button class="glow-on-hover" type="button" onclick="menuRedirect()">MENU</button>
+        
+        
+        <div class="label" id="printBtn">
+            <div class="bar"></div>
+            <div class="label-logo"> <img src="https://www.genovapipe.com/assets/img/geno7.png"></div>
+            <div class="item-number">80660</div>
+            <div class="part-pic">picture here</div>
+            <div class="bar2">
+                <div class="inner-bar">materal type here</div>
+            </div>
+            <div class="desc">description here</div>
+
+            <div class="conn-type">connection type here</div>
+            <div class="qty-result">799
+                <script type="text/javascript">
+                    function getcopy() {
+                        var qty = document.getElementById("copies").value;
+                        display_message.innerHTML = qty;
+                    }
+                </script>
+            </div>
+            <div class="qty">qty: </div>
+            <div class="barcode">barcode displays here
+                <svg id="upc-a" jsbarcode-format="upc" jsbarcode-value=document.get() jsbarcode-textmargin="0"
+                    jsbarcode-fontoptions="bold">
+                </svg>
+            </div>
+
+            <div class="p65"><span style="font-weight: bold;">&#9888 WARNING:</span> This product can expose you to
+                chemicals including Titanium Dioxide which is known to the State of California to cause cancer. For
+                more
+                information, go to www.P65Warnings.ca.gov
+            </div>
+            <div class="made">made</div>
+            <div class="plt-mch">ky- </div>
+            <div class="mch">mch </div>
+            <div class="date">12/30/23</div>
+            <div class="alt-num">alt item numbers here- up to 51 char</div>
+            <div class="url">genovapipe.com</div>
+
+            <div class="bar3"></div>
+        </div>
+    </form>
+
+</body>
+
+</html>
